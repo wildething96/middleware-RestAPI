@@ -11,6 +11,10 @@ const userSchema = new mongooose.Schema({
     required: true,
     unique: true,
   },
+  phone: {
+    type: String,
+    unique: true,
+  },
   pass: {
     type: String,
     required: true,
