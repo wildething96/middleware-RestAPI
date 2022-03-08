@@ -9,7 +9,7 @@ const port = 5001;
 app.use(express.json());
 app.use(cors());
 
-app.use(cors({ origin: "https://git.heroku.com/m33-back-end.git" }));
+app.use(cors({ origin: "https://m33-back-end.herokuapp.com/" }));
 
 app.use(userRouter, movieRouter);
 
