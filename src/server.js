@@ -9,7 +9,7 @@ const port = process.env.PORT || 5001;
 app.use(express.json());
 app.use(cors());
 
-app.use(cors({ origin: "https://git.heroku.com/m33-back-end.git" }));
+app.use(cors({ origin: "null" }));
 
 app.use(userRouter, movieRouter);
 
