@@ -10,7 +10,7 @@ const { hashPass } = require("../middleware/");
 const userRouter = Router();
 
 userRouter.post("/login", hashPass, addUser);
-userRouter.get("/user", getUser);
+userRouter.post("/user", getUser);
 userRouter.put("/user", updateUser);
 userRouter.delete("/user", deleteUser);
 
