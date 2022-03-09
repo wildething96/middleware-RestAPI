@@ -4,7 +4,7 @@ const cors = require("cors");
 const userRouter = require("./user/userRoutes");
 const movieRouter = require("./movies/movieRoutes");
 const app = express();
-const port = 5001;
+const port = process.env.PORT;
 
 app.use(express.json());
 app.use(cors());
