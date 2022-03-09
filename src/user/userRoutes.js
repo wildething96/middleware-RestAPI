@@ -9,11 +9,11 @@ const {
 const { hashPass } = require("../middleware/");
 const userRouter = Router();
 
-userRouter.post("/user", hashPass, addUser);
+userRouter.post("/login", hashPass, addUser);
 userRouter.get("/user", getUser);
 userRouter.put("/user", updateUser);
 userRouter.delete("/user", deleteUser);
 
-userRouter.get("/login", comparePass);
+// userRouter.get("/login", comparePass);
 
 module.exports = userRouter;
