@@ -2,7 +2,7 @@ const bcrypt = require("bcryptjs");
 
 exports.hashPass = async (req, res, next) => {
   try {
-    req.body.pass = (await bcrypt.hash(req.body.pass, 8)).toString();
+    req.body.pass = await bcrypt.hash(req.body.pass, 8);
     next();
   } catch (error) {
     console.log(error);
