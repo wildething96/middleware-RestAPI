@@ -25,7 +25,8 @@ exports.getPost = async (req, res) => {
 
 exports.updatePost = async (req, res) => {
   try {
-    const post = await Post.findById(req.body._id);
+    const post = await Post.findOne({ _id: req.body._id });
+    console.log(post);
     if (post) {
       const updatedPost = {
         author: post.author,
@@ -33,8 +34,8 @@ exports.updatePost = async (req, res) => {
         message: req.body.message || post.message,
         likes: post.likes,
       };
-      await Post.updateOne({ author: post.author }, updatedPost);
-      res.status(200).send({ updatedPost });
+      await Post.updateOne({ _id: req.body._id }, updatedPost);
+      res.status(200).send({ post });
     } else {
       res.status(404).send({
         error: "Cannot find post to update",
